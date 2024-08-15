@@ -41,7 +41,7 @@ public class Graph {
 
     }
 
-    static void bfs(ArrayList<Edge>[] graph, int V, boolean[] vis, int start){
+    static void bfs(ArrayList<Edge>[] graph, boolean[] vis, int start){
         Queue<Integer> q = new LinkedList<>();
         q.add(start);
         while (!q.isEmpty()){

@@ -17,7 +17,7 @@ public class Permutations {
         char ch = up.charAt(0);
         for (int i = 0; i <= p.length(); i++) {
             String first = p.substring(0,i);
-            String second = p.substring(i, p.length());
+            String second = p.substring(i);
             permutations(first+ch+second, up.substring(1));
         }
     }
@@ -33,7 +33,7 @@ public class Permutations {
         char ch = up.charAt(0);
         for (int i = 0; i <= p.length(); i++) {
             String first = p.substring(0,i);
-            String second = p.substring(i, p.length());
+            String second = p.substring(i);
             list.addAll(permutationsList(first+ch+second, up.substring(1)));
         }
         return list;

@@ -12,11 +12,12 @@ public class Subsets {
 //        for(List<Integer> list: ans){
 //            System.out.println(list);
 //        }
-        int[] arr = {1,2,2};
-        List<List<Integer>> ans = subsetDuplicate(arr);
-        for(List<Integer> list: ans){
-            System.out.println(list);
-        }
+//        int[] arr = {1,2,2};
+//        List<List<Integer>> ans = subsetDuplicate(arr);
+//        for(List<Integer> list: ans){
+//            System.out.println(list);
+//        }
+        subseq("", "abc");
     }
 
     static void subseq(String p, String up){
@@ -72,7 +73,7 @@ public class Subsets {
 
         for(int i = 0; i < arr.length; i++){
             int n = outer.size();
-            if(i > 0 &&arr[i] == arr[i-1]){
+            if(i > 0 && arr[i] == arr[i-1]){
                 start = end + 1;
             }
             end = outer.size() - 1;

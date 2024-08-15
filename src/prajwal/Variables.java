@@ -1,5 +1,8 @@
 package prajwal;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class Variables {
     public static void main(String[] args) {
         // byte overflow
@@ -31,5 +34,30 @@ public class Variables {
 //
 //        b = (byte)d;
 //        System.out.println(b);
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(8,4,5,2,6,5));
+        list.replaceAll(Variables::square);
+        System.out.println(list);
+        List<Integer> res = new ArrayList<>();
+        Optional<Integer> first =  list.stream()
+                .filter(x -> x > 10)
+                .filter(x -> x % 2 == 0)
+                .findFirst();
+        res = list.stream()
+                .filter(x -> x > 10)
+                .filter(x -> x % 2 == 0)
+                .collect(Collectors.toList());
+        System.out.println(res);
+        int min = list.stream().min(Comparator.naturalOrder()).get();
+        System.out.println(min);
+        list.sort(Comparator.reverseOrder());
+        System.out.println(list);
+        System.out.println(Arrays.binarySearch(list.toArray(new Integer[0]), 4, Comparator.reverseOrder()));
+        int[] arr = {1,2,3,4};
+        System.out.println((float)(int) Arrays.stream(arr).filter(e -> e%2 ==0).count());
+        Integer[] ar = Arrays.stream(arr).boxed().toArray(Integer[]::new);
+        System.out.println(Arrays.stream(arr).average().getAsDouble());
+}
+static int square(int x) {
+    return x*x;
 }
 }
