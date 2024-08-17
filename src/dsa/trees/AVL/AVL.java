@@ -1,5 +1,9 @@
 package dsa.trees.AVL;
 
+import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class AVL {
     public static class Node{
         int val;
@@ -167,6 +171,23 @@ public class AVL {
         inOrder(node.right);
     }
 
+    public void bfs(){
+        ArrayDeque<Node> q = new ArrayDeque<>();
+        q.addLast(root);
+        while(!q.isEmpty()){
+            Node popped = q.removeFirst();
+            System.out.print(popped.val + " ");
+            if(popped.left != null){
+                q.addLast(popped.left);
+            }
+            if(popped.right != null){
+                q.addLast(popped.right);
+            }
+
+        }
+    }
+
+
     public static void main(String[] args) {
         AVL tree = new AVL();
         int[] nums = {1,2,3,4,5,6};
@@ -176,5 +197,7 @@ public class AVL {
         tree.display();
         System.out.println(tree.isBalanced());
         System.out.println(tree.height());
+        tree.inOrder();
+        tree.bfs();
     }
 }

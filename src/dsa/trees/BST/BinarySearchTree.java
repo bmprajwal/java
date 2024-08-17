@@ -120,13 +120,10 @@ public class BinarySearchTree {
 
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
-        int[] nums = {20, 15,25,10,18,23,30,5,12};
+        int[] nums = {1,2,3,4,5,6};
         tree.insert(nums);
         tree.display();
         System.out.println(tree.isBalanced());
         System.out.println(tree.height());
-        tree.preOrder();
-        tree.inOrder();
-        tree.postOrder();
     }
 }
