@@ -2,7 +2,7 @@ package dsa.sortAlgo;
 
 import java.util.Arrays;
 
-public class CyclicSort {
+public class  CyclicSort {
     public static void main(String[] args) {
         int[] arr = {4,5,2,3,1};
         sort(arr);

@@ -2,7 +2,7 @@ package dsa.recursion.easy;
 
 public class Printing {
     public static void main(String[] args) {
-        funMirror(5);
+        funRev(5);
     }
 
     static void fun(int n){
